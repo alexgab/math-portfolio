@@ -214,10 +214,6 @@ def build_page(item: dict[str, str]) -> str:
 
     <main class="viewer-layout">
       <section class="content-card">
-        <div class="content-card-head">
-          <h2>Текст материала</h2>
-          <p>Содержимое отображается в формате для чтения на сайте.</p>
-        </div>
         <article class="document-content">
         {content_html}
         </article>
