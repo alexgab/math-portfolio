@@ -1,0 +1,409 @@
+:root {
+  --bg: #f7efe4;
+  --bg-soft: #fffaf4;
+  --panel: rgba(255, 250, 244, 0.84);
+  --panel-strong: #fffdf9;
+  --line: rgba(89, 64, 36, 0.14);
+  --text: #2e241c;
+  --muted: #6d5847;
+  --accent: #c8612f;
+  --accent-deep: #8d3f1a;
+  --accent-soft: #f7d5c3;
+  --shadow: 0 24px 60px rgba(105, 72, 42, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(200, 97, 47, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(96, 152, 137, 0.14), transparent 28%),
+    linear-gradient(180deg, #fff9f1 0%, #f8efdf 52%, #f5e8d4 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.hero,
+.section,
+.footer {
+  position: relative;
+}
+
+.hero {
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 244, 232, 0.85)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.topbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+}
+
+.topbar-links a {
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.topbar-links a:hover,
+.topbar-links a:focus-visible,
+.filter-chip:hover,
+.filter-chip:focus-visible,
+.card-actions a:hover,
+.card-actions a:focus-visible,
+.footer a:hover,
+.footer a:focus-visible {
+  background: rgba(200, 97, 47, 0.1);
+}
+
+.hero-content {
+  margin-top: 42px;
+}
+
+.eyebrow,
+.section-kicker,
+.tag,
+.meta {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.78rem;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--accent-deep);
+  margin: 0 0 18px;
+  font-weight: 700;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.about-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  max-width: 12ch;
+}
+
+.hero-text,
+.section-heading p,
+.work-card p,
+.lesson-card p,
+.about-card p,
+.footer p,
+.facts li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-text {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  font-size: 1.03rem;
+}
+
+.hero-actions,
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-actions {
+  margin-top: 26px;
+}
+
+.button,
+.card-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(141, 63, 26, 0.18);
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.button-primary {
+  color: #fffaf6;
+  background: linear-gradient(135deg, var(--accent), #de7d4f);
+  border-color: transparent;
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.work-card,
+.lesson-card,
+.about-card {
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(89, 64, 36, 0.08);
+}
+
+.section {
+  padding: 54px 0 0;
+}
+
+.section + .section {
+  margin-top: 34px;
+  padding: 34px 0 0;
+  border-top: 1px solid rgba(141, 63, 26, 0.16);
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.section-heading p {
+  margin: 14px 0 0;
+}
+
+.compact h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.filter-chip {
+  appearance: none;
+  border: 1px solid rgba(141, 63, 26, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 11px 16px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-chip.is-active {
+  background: var(--accent);
+  color: #fffaf6;
+  border-color: transparent;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+}
+
+.work-card.is-hidden {
+  display: none;
+}
+
+.tag {
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.work-card h3,
+.lesson-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.work-card p,
+.lesson-card p,
+.about-card p {
+  margin: 0;
+}
+
+.meta {
+  color: var(--muted);
+  margin-top: auto;
+  font-weight: 700;
+}
+
+.lesson-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+  gap: 24px;
+  margin-top: 28px;
+  padding: 24px;
+}
+
+.lesson-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.lesson-image {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f3e1d0;
+  border: 1px solid rgba(141, 63, 26, 0.12);
+}
+
+.lesson-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lesson-image figcaption {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(141, 63, 26, 0.12);
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.about-card {
+  padding: 24px;
+}
+
+.about-card .section-kicker {
+  margin-bottom: 18px;
+}
+
+.about-card h2 {
+  margin-bottom: 18px;
+}
+
+.accent-card {
+  background:
+    linear-gradient(135deg, rgba(200, 97, 47, 0.14), rgba(96, 152, 137, 0.12)),
+    var(--panel-strong);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin-top: 34px;
+  padding: 22px 6px 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .hero-content,
+  .lesson-card,
+  .about-grid,
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h1 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .hero {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .topbar,
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 28px;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2.1rem, 12vw, 3.3rem);
+  }
+
+  .section {
+    padding-top: 42px;
+  }
+
+  .section + .section {
+    margin-top: 26px;
+    padding: 26px 0 0;
+  }
+}
